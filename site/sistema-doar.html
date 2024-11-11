@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cestas básicas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+<div class="container" id="start-screen">
+    <h1>Doação de cestas básicas</h1>
+    <div class="opcoes">
+        <button onclick="showForm()">Preciso de Doação</button>
+        <button onclick="showDonationLocation()">Quero Fazer uma Doação</button>
+    </div>
+</div>
+
+<div class="container" id="donation-form" style="display: none;">
+    <h1>Preciso de Doação</h1>
+    <form id="donationRequestForm">
+        <label for="address">Endereço:</label>
+        <input type="text" id="address" name="address" placeholder="Digite seu endereço" required>
+
+        <label for="familySize">Número de pessoas em sua casa:</label>
+        <input type="number" id="familySize" name="familySize" placeholder="Digite o número de pessoas" min="1" required>
+
+        <button type="submit">Enviar Pedido</button>
+    </form>
+    <button onclick="backToStart()">Voltar</button>
+</div>
+
+<div class="container" id="donation-location" style="display: none;">
+    <h1>Faça uma Doação</h1>
+    <p>Para doar, leve os itens ao endereço abaixo:</p>
+    <br>
+    <p><strong>Congregação Batista do Pilar</strong></p>
+    <p>Rua Timbiras, 49 - Bairro do Pilar, Ilha de Itamaracá</p>
+    <br>
+    <button onclick="backToStart()">Voltar</button>
+</div>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+</body>
+</html>
